@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   password = '';
-  includeLetters : boolean = false;
-  includeNumbers : boolean = false;
-  includeSymbols : boolean = false;
+  includeLetters : boolean = true;
+  includeNumbers : boolean = true;
+  includeSymbols : boolean = true;
   length = 8;
 
   onChangeUseLetters() {
