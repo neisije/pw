@@ -7,25 +7,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   password = '';
-  useLetters : boolean = false;
-  useNumbers : boolean = false;
-  useSymbols : boolean = false;
-  pwlength = 8;
+  includeLetters : boolean = false;
+  includeNumbers : boolean = false;
+  includeSymbols : boolean = false;
+  length = 8;
 
-  onUseLettersChange() {
-    this.useLetters = !this.useLetters;
+  onChangeUseLetters() {
+    this.includeLetters = !this.includeLetters;
   }
 
-  onUseNumbersChange() {
-    this.useNumbers = !this.useNumbers;
+  onChangeUseNumbers() {
+    this.includeNumbers = !this.includeNumbers;
   }
 
-  onUseSymbolsChange() {
-    this.useSymbols = !this.useSymbols;
+  onChangeUseSymbols() {
+    this.includeSymbols = !this.includeSymbols;
   }
 
-  onLengthChange(event: any) {
-    this.pwlength = event.target.value;
+  onChangeLength(event: any) {
+    this.length = event.target.value;
   }
 
   onButtonClick() {
@@ -34,18 +34,18 @@ export class AppComponent {
     const symbols = '!@#$%^&*()';
 
     let validChars = '';
-    if (this.useLetters) {
+    if (this.includeLetters) {
       validChars += letters;
     }
-    if (this.useNumbers) {
+    if (this.includeNumbers) {
       validChars += numbers;
     }
-    if (this.useSymbols) {
+    if (this.includeSymbols) {
       validChars += symbols;
     }
 
     let generatedPassword = '';
-    for (let i = 0; i < this.pwlength; i++) {
+    for (let i = 0; i < this.length; i++) {
       const index = Math.floor(Math.random() * validChars.length);
       generatedPassword += validChars[index];
     }
